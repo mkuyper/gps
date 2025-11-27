@@ -29,8 +29,8 @@ class RinexUtil:
     def ura_index(r:xr.Dataset) -> int:
         acc = RinexUtil.value(r.SVacc)
 
-        thresholds = { 2.4, 3.4, 4.85, 6.85, 9.65, 13.65, 24, 48,
-                      96, 192, 384, 768, 1536, 3072, 6144 }
+        thresholds = [ 2.4, 3.4, 4.85, 6.85, 9.65, 13.65, 24, 48,
+                      96, 192, 384, 768, 1536, 3072, 6144 ]
 
         for i, th in enumerate(thresholds):
             if acc <= th:
